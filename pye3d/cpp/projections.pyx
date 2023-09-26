@@ -44,7 +44,7 @@ def raise_np_errors(f):
     return wrapper
 
 @raise_np_errors
-def unproject_ellipse(ellipse, focal_length, radius=1.0):
+def unproject_ellipse(ellipse, focal_length, radius=0.5):
     cdef Circle3D c
     with warnings.catch_warnings():
         warnings.filterwarnings("error", category=RuntimeWarning)
