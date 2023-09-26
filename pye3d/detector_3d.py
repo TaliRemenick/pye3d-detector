@@ -101,7 +101,7 @@ class Detector3D:
         model_update_interval_long_term=1.0,
         model_update_interval_ult_long_term=10.0,
         model_warmup_duration=5.0,
-        calculate_rms_residual=False,
+        calculate_rms_residual=True,
     ):
         self._camera = camera
         self._long_term_mode = long_term_mode
@@ -288,7 +288,6 @@ class Detector3D:
                 self.ultra_long_term_model.estimate_sphere_center(
                     calculate_rms_residual=self._calculate_rms_residual
                 )
-                print("1")
 
             if self._long_term_schedule.is_update_due(observation.timestamp):
                 # update long term model with ultra long term bias
@@ -297,7 +296,7 @@ class Detector3D:
                     prior_strength=0.1,
                     calculate_rms_residual=self._calculate_rms_residual,
                 )
-                print("2")
+
             else:
                 # use existing sphere center estimates
                 long_term_estimate = SphereCenterEstimates(
