@@ -369,6 +369,7 @@ class Detector3D:
             )
 
         else:
+            print("You need a real frame!")
             # low confidence: use kalman prediction to search for circles in image
             pupil_circle, confidence_3d_search = self._predict_from_3d_search(
                 frame, best_guess=pupil_circle_kalman
