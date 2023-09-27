@@ -589,8 +589,8 @@ class Detector3D:
 
         is_center_x_in_range = -15 <= prediction_corrected.sphere_center[0] <= 15
         is_center_y_in_range = -10 <= prediction_corrected.sphere_center[1] <= 10
-        is_center_z_in_range = 15 <= prediction_corrected.sphere_center[2] <= 75
-        is_diameter_in_range = 1.0 <= result["diameter_3d"] <= 9.0
+        is_center_z_in_range = 7 <= prediction_corrected.sphere_center[2] <= 30
+        is_diameter_in_range = 1.0 <= result["diameter_3d"] <= 5.0
         parameters_in_range = (
             is_center_x_in_range,
             is_center_y_in_range,
