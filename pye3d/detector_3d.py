@@ -282,6 +282,7 @@ class Detector3D:
             or self.long_term_model.n_observations <= 0
             or self.ultra_long_term_model.n_observations <= 0
         ):
+            print("if1")
             return
 
         try:
@@ -318,6 +319,7 @@ class Detector3D:
                     prior_strength=sigmoid(circularity_mean),
                     calculate_rms_residual=self._calculate_rms_residual,
                 )
+                print("if2")
         except Exception:
             # Known issues:
             # - Can raise numpy.linalg.LinAlgError: SVD did not converge
