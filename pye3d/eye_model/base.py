@@ -36,6 +36,7 @@ class TwoSphereModel(TwoSphereModelAbstract):
 
         self.refractionizer = Refractionizer()
         self._set_default_model_params()
+        print("model initialized")
 
     @property
     def sphere_center(self) -> np.ndarray:

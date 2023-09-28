@@ -216,5 +216,6 @@ class BinBufferedObservationStorage(ObservationStorage):
                 observation.ellipse.center, self.camera.resolution
             )
         )
+        print(f"x: {x}, y: {y}")
         # convert to 1D bin index
         return x + y * self.h

@@ -62,6 +62,7 @@ class TwoSphereModelAsync(TwoSphereModelAbstract):
             log_handlers=logging.getLogger().handlers,
         )
 
+
     @property
     def sphere_center(self) -> np.ndarray:
         return self._frontend.sphere_center
