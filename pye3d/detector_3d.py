@@ -244,8 +244,9 @@ class Detector3D:
     ):
         # update models
         observation = self._extract_observation(pupil_datum)
+        print(f"before update models")
         self.update_models(observation)
-
+        print(f"after update models")
         # predict target variables
         sphere_center = self.long_term_model.sphere_center
         pupil_circle = self._predict_pupil_circle(observation, frame)
