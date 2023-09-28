@@ -87,7 +87,9 @@ class BasicStorage(ObservationStorage):
         self._storage = []
 
     def add(self, observation: Observation):
+        print(f"befor append storage - len: {len(self._storage)}")
         if observation.invalid:
+            print("observation invalid")
             return
         self._storage.append(observation)
         print(f"after append storage - len: {len(self._storage)}")

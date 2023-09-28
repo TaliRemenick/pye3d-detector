@@ -273,8 +273,11 @@ class Detector3D:
         return result
 
     def update_models(self, observation: Observation):
+        print("short model")
         self.short_term_model.add_observation(observation)
+        print("long model")
         self.long_term_model.add_observation(observation)
+        print("ultra model")
         self.ultra_long_term_model.add_observation(observation)
 
         if (
