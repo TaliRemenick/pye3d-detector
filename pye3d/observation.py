@@ -90,7 +90,7 @@ class BasicStorage(ObservationStorage):
         if observation.invalid:
             return
         self._storage.append(observation)
-
+        print(f"after append storage - len: {len(self._storage)}")
     @property
     def observations(self) -> Sequence[Observation]:
         return self._storage
