@@ -211,8 +211,8 @@ class BinBufferedObservationStorage(ObservationStorage):
 
     def _get_bin(self, observation: Observation) -> int:
         x, y = (
-            print(f"ellipse center - {ellipse_center}, resolution - {resolution}")
-            # floor((ellipse_center + resolution / 2) / self.pixels_per_bin)
+            # print(f"ellipse center - {ellipse_center}, resolution - {resolution}")
+            floor((ellipse_center + resolution / 2) / self.pixels_per_bin)
             for ellipse_center, resolution in zip(
                 observation.ellipse.center, self.camera.resolution
             )
