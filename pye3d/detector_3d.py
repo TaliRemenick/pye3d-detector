@@ -121,7 +121,7 @@ class Detector3D:
             "model_warmup_duration": model_warmup_duration,
         }
         self.reset()
-        logger.debug(
+        print(
             f"{type(self)} initialized with "
             f"long_term_mode={long_term_mode} "
             f"calculate_rms_residual={calculate_rms_residual} "
