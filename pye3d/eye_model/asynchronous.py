@@ -129,6 +129,8 @@ class TwoSphereModelAsync(TwoSphereModelAbstract):
         projected_sphere_center = self._frontend.projected_sphere_center
         sphere_center = self._frontend.sphere_center
         rms_residual = self._frontend.rms_residual
+        text = f"Estimate sphere center - rsm: {rms_residual}\n"
+        print(text)
         return SphereCenterEstimates(
             projected_sphere_center, sphere_center, rms_residual
         )

@@ -87,7 +87,7 @@ class TwoSphereModel(TwoSphereModelAbstract):
         from_2d=None,
         prior_3d=None,
         prior_strength=0.0,
-        calculate_rms_residual=False,
+        calculate_rms_residual=True,
     ):
         self.projected_sphere_center = (
             from_2d if from_2d is not None else self.estimate_sphere_center_2d()
@@ -138,6 +138,7 @@ class TwoSphereModel(TwoSphereModelAbstract):
             else None
         )
 
+        print(f"Estimate sphere center\nprior_3d: {prior_3d}\nsum_aux_3d{sum_aux_3d}\n")
         return sphere_center, rms_residual
 
     def _prep_data(self):
