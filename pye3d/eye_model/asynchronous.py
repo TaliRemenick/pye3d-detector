@@ -129,7 +129,7 @@ class TwoSphereModelAsync(TwoSphereModelAbstract):
         projected_sphere_center = self._frontend.projected_sphere_center
         sphere_center = self._frontend.sphere_center
         rms_residual = self._frontend.rms_residual
-        text = f"Estimate sphere center - rsm: {rms_residual}\n"
+        text = f"TwoSphereModelAsync - Estimate sphere center1 - rsm: {rms_residual}\n"
         print(text)
         return SphereCenterEstimates(
             projected_sphere_center, sphere_center, rms_residual
@@ -293,6 +293,8 @@ class _TwoSphereModelSyncedBackend(_TwoSphereModelSyncedAbstract):
     def estimate_sphere_center(self, *args, **kwargs):
         result = super().estimate_sphere_center(*args, **kwargs)
         self._is_estimation_ongoing_flag.clear()
+        text = f"_TwoSphereModelSyncedBackend - Estimate sphere center2\n"
+        print(text)
         return result
 
     def estimate_sphere_center_2d(self) -> np.ndarray:

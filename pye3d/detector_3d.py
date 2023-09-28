@@ -288,7 +288,7 @@ class Detector3D:
                 self.ultra_long_term_model.estimate_sphere_center(
                     calculate_rms_residual=self._calculate_rms_residual
                 )
-
+                print("updated ultra model")
             if self._long_term_schedule.is_update_due(observation.timestamp):
                 # update long term model with ultra long term bias
                 long_term_estimate = self.long_term_model.estimate_sphere_center(
@@ -296,7 +296,7 @@ class Detector3D:
                     prior_strength=0.1,
                     calculate_rms_residual=self._calculate_rms_residual,
                 )
-
+                print("updated long model")
             else:
                 # use existing sphere center estimates
                 long_term_estimate = SphereCenterEstimates(
@@ -304,7 +304,7 @@ class Detector3D:
                     three_dim=self.long_term_model.sphere_center,
                     rms_residual=self.long_term_model.rms_residual,
                 )
-
+                print("use existing sphere center")
             # update short term model with help of long-term model
             # using 2d center for disambiguation and 3d center as prior bias
             # prior strength is set as a funcition of circularity of the 2D pupil

@@ -100,6 +100,8 @@ class TwoSphereModel(TwoSphereModelAbstract):
         )
         self.set_sphere_center(sphere_center)
         self.rms_residual = rms_residual if rms_residual is not None else float("nan")
+        text = f"TwoSphereModel - Estimate sphere center3 - rsm: {rms_residual}\n"
+        print(text)
         return SphereCenterEstimates(
             self.projected_sphere_center, sphere_center, rms_residual
         )
