@@ -71,6 +71,7 @@ class TwoSphereModel(TwoSphereModelAbstract):
 
     def add_observation(self, observation: Observation):
         self.storage.add(observation)
+        print("TwoSphereModel - add_observation")
 
     @property
     def n_observations(self) -> int:

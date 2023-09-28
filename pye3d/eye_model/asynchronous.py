@@ -281,11 +281,12 @@ class _TwoSphereModelSyncedBackend(_TwoSphereModelSyncedAbstract):
             self._synced_projected_sphere_center[:] = coordinates
 
     def add_observation(self, observation: Observation):
+        print("start _TwoSphereModelSyncedBackend - add_observation")
         super().add_observation(observation=observation)
         n_observations = super().n_observations
         with self._synced_observation_count:
             self._synced_observation_count.value = n_observations
-
+        print("end _TwoSphereModelSyncedBackend - add_observation")
     @property
     def n_observations(self) -> int:
         return self._synced_observation_count.value
