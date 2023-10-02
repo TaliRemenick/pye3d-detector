@@ -12,7 +12,7 @@ from ..geometry.projections import (
 )
 from ..geometry.utilities import normalize
 
-_EYE_RADIUS_DEFAULT: float = 10.392304845413264
+_EYE_RADIUS_DEFAULT: float = 5.392304845413264
 
 cdef extern from "search_on_sphere.h":
 
