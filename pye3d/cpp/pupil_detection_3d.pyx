@@ -11,8 +11,7 @@ from ..geometry.projections import (
     unproject_edges_to_sphere,
 )
 from ..geometry.utilities import normalize
-
-_EYE_RADIUS_DEFAULT: float = 5
+from ..constants import _EYE_RADIUS_DEFAULT
 
 cdef extern from "search_on_sphere.h":
 
