@@ -589,8 +589,8 @@ class Detector3D:
 
         is_center_x_in_range = -15 <= prediction_corrected.sphere_center[0] <= 15
         is_center_y_in_range = -10 <= prediction_corrected.sphere_center[1] <= 10
-        is_center_z_in_range = 7 <= prediction_corrected.sphere_center[2] <= 30
-        is_diameter_in_range = 1.0 <= result["diameter_3d"] <= 5.0
+        is_center_z_in_range = 15 <= prediction_corrected.sphere_center[2] <= 75
+        is_diameter_in_range = 1.0 <= result["diameter_3d"] <= 9.0
         parameters_in_range = (
             is_center_x_in_range,
             is_center_y_in_range,
@@ -642,7 +642,7 @@ class Detector3D:
         except AttributeError:
             debug_info["bin_data"] = []
 
-        # TODO: Pupil visualizer_pye3d.py attempts to draw Dierkes lines. Currently we
+        # TODO: Pupi
         # don't calculate them here, we could probably do that again. Based on which
         # model? Might be hard to do when things run in the background. We might have to
         # remove this from the visualizer_pye3d.py
