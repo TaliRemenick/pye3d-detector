@@ -56,7 +56,7 @@ def main(eye_video_path):
     cv2.destroyAllWindows()
     res_3d.to_csv("results_3d.csv")
     res_2d.to_csv("results_2d.csv")
-    return result_3d, result_2d
+    return
 
 
 if __name__ == "__main__":
