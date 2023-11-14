@@ -10,7 +10,7 @@ def main(eye_video_path):
     # create 2D detector
     detector_2d = Detector2D()
     # create pye3D detector
-    camera = CameraModel(focal_length=370, resolution=[640, 480])
+    camera = CameraModel(focal_length=740, resolution=[640, 480])
     detector_3d = Detector3D(camera=camera, long_term_mode=DetectorMode.blocking)
     res_3d = pd.DataFrame(columns=['timestamp','sphere','projected_sphere', 'circle_3d', 'diameter_3d',
      'ellipse', 'location', 'diameter', 'confidence', 'model_confidence', 'theta', 'phi'])
@@ -19,7 +19,7 @@ def main(eye_video_path):
     # load eye video
     eye_video = cv2.VideoCapture(eye_video_path)
     # read each frame of video and run pupil detectors
-    while i<919:
+    while i<920:
         frame_number = eye_video.get(cv2.CAP_PROP_POS_FRAMES)
         fps = eye_video.get(cv2.CAP_PROP_FPS)
         ret, eye_frame = eye_video.read()
