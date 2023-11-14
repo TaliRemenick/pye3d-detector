@@ -35,21 +35,21 @@ def main(eye_video_path):
             ellipse_3d = result_3d["ellipse"]
             res_3d.loc[i] = result_3d
             i += 1
-            # # draw 3D detection result on eye frame
-            # cv2.ellipse(
-            #     eye_frame,
-            #     tuple(int(v) for v in ellipse_3d["center"]),
-            #     tuple(int(v / 2) for v in ellipse_3d["axes"]),
-            #     ellipse_3d["angle"],
-            #     0,
-            #     360,  # start/end angle for drawing
-            #     (0, 255, 0),  # color (BGR): red
-            # )
-            # # show frame
-            # cv2.imshow("eye_frame", eye_frame)
-            # # press esc to exit
-            # if cv2.waitKey(1) & 0xFF == 27:
-            #     break
+            # draw 3D detection result on eye frame
+            cv2.ellipse(
+                eye_frame,
+                tuple(int(v) for v in ellipse_3d["center"]),
+                tuple(int(v / 2) for v in ellipse_3d["axes"]),
+                ellipse_3d["angle"],
+                0,
+                360,  # start/end angle for drawing
+                (0, 255, 0),  # color (BGR): red
+            )
+            # show frame
+            cv2.imshow("eye_frame", eye_frame)
+            # press esc to exit
+            if cv2.waitKey(1) & 0xFF == 27:
+                break
         else:
             break
     eye_video.release()
