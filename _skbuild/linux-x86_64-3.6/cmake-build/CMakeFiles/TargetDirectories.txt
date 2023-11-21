@@ -1,0 +1,9 @@
+/home/tali/PycharmProjects/pye3d-detector-forked/_skbuild/linux-x86_64-3.6/cmake-build/CMakeFiles/pupil_detection_3d.dir
+/home/tali/PycharmProjects/pye3d-detector-forked/_skbuild/linux-x86_64-3.6/cmake-build/CMakeFiles/projections.dir
+/home/tali/PycharmProjects/pye3d-detector-forked/_skbuild/linux-x86_64-3.6/cmake-build/CMakeFiles/refraction_correction.dir
+/home/tali/PycharmProjects/pye3d-detector-forked/_skbuild/linux-x86_64-3.6/cmake-build/CMakeFiles/edit_cache.dir
+/home/tali/PycharmProjects/pye3d-detector-forked/_skbuild/linux-x86_64-3.6/cmake-build/CMakeFiles/rebuild_cache.dir
+/home/tali/PycharmProjects/pye3d-detector-forked/_skbuild/linux-x86_64-3.6/cmake-build/CMakeFiles/list_install_components.dir
+/home/tali/PycharmProjects/pye3d-detector-forked/_skbuild/linux-x86_64-3.6/cmake-build/CMakeFiles/install.dir
+/home/tali/PycharmProjects/pye3d-detector-forked/_skbuild/linux-x86_64-3.6/cmake-build/CMakeFiles/install/local.dir
+/home/tali/PycharmProjects/pye3d-detector-forked/_skbuild/linux-x86_64-3.6/cmake-build/CMakeFiles/install/strip.dir

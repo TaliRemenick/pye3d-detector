@@ -1,0 +1,3 @@
+/home/tali/PycharmProjects/pye3d-detector-forked/_skbuild/linux-x86_64-3.6/cmake-install/pye3d/cpp/./pupil_detection_3d.cpython-36m-x86_64-linux-gnu.so
+/home/tali/PycharmProjects/pye3d-detector-forked/_skbuild/linux-x86_64-3.6/cmake-install/pye3d/cpp/./projections.cpython-36m-x86_64-linux-gnu.so
+/home/tali/PycharmProjects/pye3d-detector-forked/_skbuild/linux-x86_64-3.6/cmake-install/pye3d/cpp/./refraction_correction.cpython-36m-x86_64-linux-gnu.so
