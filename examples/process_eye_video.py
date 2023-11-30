@@ -31,7 +31,7 @@ def main(eye_video_path):
             result_2d["timestamp"] = frame_number / fps
             res_2d.loc[i] = result_2d
             # pass 2D detection result to 3D detector
-            result_3d = detector_3d.update_and_detect(result_2d, grayscale_array)
+            result_3d = detector_3d.update_and_detect(result_2d, grayscale_array, eye_radius, dist)
             ellipse_3d = result_3d["ellipse"]
             res_3d.loc[i] = result_3d
             i += 1
