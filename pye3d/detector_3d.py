@@ -102,7 +102,9 @@ class Detector3D:
         model_update_interval_ult_long_term=10.0,
         model_warmup_duration=5.0,
         calculate_rms_residual=True,
+        _EYE_RADIUS_DEFAULT = _EYE_RADIUS_DEFAULT
     ):
+        self._EYE_RADIUS_DEFAULT = _EYE_RADIUS_DEFAULT
         self._camera = camera
         self._long_term_mode = long_term_mode
         self._calculate_rms_residual = calculate_rms_residual
@@ -386,7 +388,7 @@ class Detector3D:
         gaze_vector_kalman = sph2cart(phi, theta)
         pupil_center_kalman = (
             self.short_term_model.sphere_center
-            + _EYE_RADIUS_DEFAULT * gaze_vector_kalman
+            + self._EYE_RADIUS_DEFAULT * gaze_vector_kalman
         )
         pupil_circle_kalman = Circle(
             pupil_center_kalman, gaze_vector_kalman, pupil_radius_kalman
@@ -417,7 +419,7 @@ class Detector3D:
             best_guess.normal,
             best_guess.radius,
             self.long_term_model.sphere_center,
-            _EYE_RADIUS_DEFAULT,
+            self._EYE_RADIUS_DEFAULT,
             self.camera.focal_length,
             self.camera.resolution,
             major_axis_factor=2.5,
@@ -431,7 +433,7 @@ class Detector3D:
             best_guess.normal,
             best_guess.radius,
             self.long_term_model.sphere_center,
-            _EYE_RADIUS_DEFAULT,
+            self._EYE_RADIUS_DEFAULT,
             self.camera.focal_length,
             self.camera.resolution,
         )
@@ -473,7 +475,7 @@ class Detector3D:
                 print(e)
 
         pupil_center = (
-            self.long_term_model.sphere_center + _EYE_RADIUS_DEFAULT * gaze_vector
+            self.long_term_model.sphere_center + self._EYE_RADIUS_DEFAULT * gaze_vector
         )
         pupil_circle = Circle(pupil_center, gaze_vector, pupil_radius)
 
@@ -522,12 +524,12 @@ class Detector3D:
                     prediction_corrected.sphere_center[1],
                     prediction_corrected.sphere_center[2],
                 ),
-                "radius": _EYE_RADIUS_DEFAULT,
+                "radius": self._EYE_RADIUS_DEFAULT,
             },
         }
 
         eye_sphere_projected = project_sphere_into_image_plane(
-            Sphere(prediction_uncorrected.sphere_center, _EYE_RADIUS_DEFAULT),
+            Sphere(prediction_uncorrected.sphere_center, self._EYE_RADIUS_DEFAULT),
             transform=True,
             focal_length=self.camera.focal_length,
             width=self.camera.resolution[0],
@@ -606,21 +608,21 @@ class Detector3D:
         debug_info = {}
 
         projected_short_term = project_sphere_into_image_plane(
-            Sphere(self.short_term_model.sphere_center, _EYE_RADIUS_DEFAULT),
+            Sphere(self.short_term_model.sphere_center, self._EYE_RADIUS_DEFAULT),
             transform=True,
             focal_length=self.camera.focal_length,
             width=self.camera.resolution[0],
             height=self.camera.resolution[1],
         )
         projected_long_term = project_sphere_into_image_plane(
-            Sphere(self.long_term_model.sphere_center, _EYE_RADIUS_DEFAULT),
+            Sphere(self.long_term_model.sphere_center, self._EYE_RADIUS_DEFAULT),
             transform=True,
             focal_length=self.camera.focal_length,
             width=self.camera.resolution[0],
             height=self.camera.resolution[1],
         )
         projected_ultra_long_term = project_sphere_into_image_plane(
-            Sphere(self.ultra_long_term_model.sphere_center, _EYE_RADIUS_DEFAULT),
+            Sphere(self.ultra_long_term_model.sphere_center, self._EYE_RADIUS_DEFAULT),
             transform=True,
             focal_length=self.camera.focal_length,
             width=self.camera.resolution[0],
