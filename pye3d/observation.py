@@ -14,7 +14,7 @@ from .geometry.projections import project_line_into_image_plane, unproject_ellip
 
 class Observation:
     def __init__(
-        self, ellipse: Ellipse, confidence: float, timestamp: float, focal_length: float
+        self, ellipse: Ellipse, confidence: float, timestamp: float, focal_length: float, eye_radius = _EYE_RADIUS_DEFAULT
     ):
         self.ellipse = ellipse
         self.confidence_2d = confidence
@@ -27,7 +27,7 @@ class Observation:
         self.aux_2d = None
         self.aux_3d = None
         self.invalid = True
-
+        self.eye_radius = eye_radius
         circle_3d_pair = unproject_ellipse(ellipse, focal_length)
         if not circle_3d_pair:
             # unprojecting ellipse failed, invalid observation!

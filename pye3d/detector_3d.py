@@ -335,12 +335,12 @@ class Detector3D:
         major_radius = pupil_datum["ellipse"]["axes"][1] / 2.0
         angle = (pupil_datum["ellipse"]["angle"] - 90.0) * np.pi / 180.0
         ellipse = Ellipse(center, minor_radius, major_radius, angle)
-
         return Observation(
             ellipse,
             pupil_datum["confidence"],
             pupil_datum["timestamp"],
             self.camera.focal_length,
+            eye_radius=self.eye_radius_default
         )
 
     def _predict_pupil_circle(
