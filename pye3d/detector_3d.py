@@ -102,9 +102,9 @@ class Detector3D:
         model_update_interval_ult_long_term=10.0,
         model_warmup_duration=5.0,
         calculate_rms_residual=True,
-        _EYE_RADIUS_DEFAULT = _EYE_RADIUS_DEFAULT
+        eye_radius_default = _EYE_RADIUS_DEFAULT
     ):
-        self._EYE_RADIUS_DEFAULT = _EYE_RADIUS_DEFAULT
+        self._EYE_RADIUS_DEFAULT = eye_radius_default
         self._camera = camera
         self._long_term_mode = long_term_mode
         self._calculate_rms_residual = calculate_rms_residual
