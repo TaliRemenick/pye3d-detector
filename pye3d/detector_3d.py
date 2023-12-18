@@ -85,7 +85,7 @@ class Search3DResult(NamedTuple):
 def sigmoid(x, baseline=0.1, amplitude=500.0, center=0.99, width=0.02):
     return baseline + amplitude * 1.0 / (1.0 + np.exp(-(x - center) / width))
 
-
+# comment
 class Detector3D:
     def __init__(
         self,
