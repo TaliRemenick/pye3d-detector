@@ -60,7 +60,8 @@ def main(eye_video_path):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("eye_video_path")
-    args = parser.parse_args()
-    main(args.eye_video_path)
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument("eye_video_path")
+    # args = parser.parse_args()
+    eye_video_path='/media/sil2/Nimrod/experiments/PV_62/2023_04_27/block_026/eye_videos/LE/230427_pv62_trial4_640x480_60hz_experiment_1_recording_0/230427_pv62_trial4_LE.mp4'
+    main(eye_video_path)
